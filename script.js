@@ -23,6 +23,10 @@ $(document).ready(function () {
         {
             letter: "F",
             count: 45,
+        },
+        {
+            letter: "G",
+            count: 30,
         }
     ];
 
@@ -57,6 +61,14 @@ $(document).ready(function () {
     x.domain([0, d3.max(data, function(d) { return d.count })]);
     y.domain(data.map(function(d) { return d.letter }));
     y.paddingInner(0.5);
+
+    svg.selectAll(".bar")
+        .data(data)
+        .enter()
+        .append("text")
+        .text(function (d) { return d.count; })
+        .attr("x", function (d) { return x(d.count) - 20; })
+        .attr("y", function (d, i) { return height - ((i) * 54) - 36; })
 
     svg.selectAll(".bar")
         .data(data)

@@ -1,3 +1,9 @@
 .bar { 
-    fill: steelblue; 
+    fill: #C08552; 
+}
+
+body text {
+    fill: #5E3023;
+    font: 10px sans-serif;
+    text-anchor: end;
 }
